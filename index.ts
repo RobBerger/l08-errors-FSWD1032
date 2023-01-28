@@ -8,8 +8,11 @@ let myInvalidJson = `{
     "alias": "Iron Man"
 }`; // missing quote for name value
 
-console.log(JSON.parse(myValidJson));
-console.log(JSON.parse(myInvalidJson));
+let json = isValidJson(myValidJson) ? JSON.parse(myValidJson) : 'Invalid JSON';
+console.log(json);
+
+json = isValidJson(myInvalidJson) ? JSON.parse(myInvalidJson) : 'Invalid JSON';
+console.log(json);
 
 function isValidJson(text: string): boolean {
     try {
