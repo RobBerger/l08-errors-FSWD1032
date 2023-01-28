@@ -1,11 +1,12 @@
-class Shape {
-    sides: number;
+let myValidJson = `{
+    "name": "Steve Rogers",
+    "alias": "Captain America"
+}`;
 
-    constructor(sides: number) {
-        this.sides = sides;
-    }
-}
+let myInvalidJson = `{
+    "name": "Tony Stark,
+    "alias": "Iron Man"
+}`; // missing quote for name value
 
-let arr: Shape[] = [ new Shape(3), new Shape(4), new Shape(5) ];
-
-console.log(arr[9].sides);
+console.log(JSON.parse(myValidJson));
+console.log(JSON.parse(myInvalidJson));
