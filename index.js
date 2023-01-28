@@ -1,8 +1,11 @@
 "use strict";
-class Shape {
-    constructor(sides) {
-        this.sides = sides;
-    }
-}
-let arr = [new Shape(3), new Shape(4), new Shape(5)];
-console.log(arr[9].sides);
+let myValidJson = `{
+    "name": "Steve Rogers",
+    "alias": "Captain America"
+}`;
+let myInvalidJson = `{
+    "name": "Tony Stark,
+    "alias": "Iron Man"
+}`; // missing quote for name value
+console.log(JSON.parse(myValidJson));
+console.log(JSON.parse(myInvalidJson));
