@@ -9,3 +9,12 @@ let myInvalidJson = `{
 }`; // missing quote for name value
 console.log(JSON.parse(myValidJson));
 console.log(JSON.parse(myInvalidJson));
+function isValidJson(text) {
+    try {
+        JSON.parse(text);
+        return true;
+    }
+    catch (_a) {
+        return false;
+    }
+}
